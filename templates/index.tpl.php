@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
     <!-- Saját stíluslap -->
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>/styles/main.css">
 </head>
 <body>
     <!-- Fejléc -->
@@ -41,7 +41,7 @@
                                 ($oldal['menun'][1] && !isset($_SESSION['felhasznalo']))
                             ): ?>
                                 <li class="nav-item<?= ($oldal == $keres) ? ' active' : '' ?>">
-                                    <a href="<?= ($url == '/') ? '.' : $url ?>" class="nav-link"><?= $oldal['szoveg'] ?></a>
+                                    <a href="<?= $BASE_URL . ($url == '/' ? '' : '/' . $url) ?>" class="nav-link"><?= $oldal['szoveg'] ?></a>
                                 </li>
                             <?php endif; ?>
                         <?php endif; ?>
